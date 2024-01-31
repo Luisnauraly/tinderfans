@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/static/css/app.css" rel="stylesheet" type="text/css">
+    <title>Signup</title>
+</head>
+
+<body>
+    <header class="header-container">
+
+        <div class="header-top">
+
+            <p class="header-top-info">Lorem ipsum dolor, sit amet consectetur <a href="#">adipisicing elit</a>. Fuga,
+                nulla.</p>
+
+            <button type="button" class="header-top-close">
+                <i class="icon ico-times"></i>
+            </button>
+
+        </div>
+
+        <div class="header-wrapper">
+            <a class="header-brand" href="/">
+                <!-- <img src="/static/images/logo.svg" alt="Logo"> -->
+                <p>Template</p>
+            </a>
+
+            <div class="header-navigation-options">
+
+                <div class="header-navigation-menu">
+                    <a href="/" class="header-navigation-link uppercase">LINK</a>
+                    <a href="/" class="header-navigation-link uppercase">LINK</a>
+                    <a href="/" class="header-navigation-link uppercase">LINK</a>
+                    <a href="/" class="header-navigation-link uppercase">LINK</a>
+                    <a href="/" class="header-navigation-link uppercase">MORE</a>
+                </div>
+
+                <div class="header-navigation-auth">
+                    <!-- <div class="navigation-auth-guest">
+                        <a href="/" class="px-2 py-2"><i class="icon ico-loupe"></i></a>
+                        <a href="/" class="btn btn-primary">Login</a>
+                        <a href="/" class="btn btn-white outline">SIGN UP</a>
+                    </div> -->
+                    <div class="navigation-auth-loged">
+                        <div class="dropdown-container loged-options">
+                            <button class="dropdown-toggle"><i class="icon ico-user text-white"></i></button>
+                            <div class="dropdown-items from-right">
+                                <a href="#" class="dropdown-item">
+                                    Settings
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    Dropdown Link
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item text-danger">
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="javascript:void(0);" class="burgerMenu-toggler">
+                    <i class="icon ico-menu-icon"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="subMenu-container">
+            <div class="subMenu-wrapper">
+                <div class="subMenu-navigation">
+                    <a href="#" class="subMenu-navigation-link">
+                        Link
+                    </a>
+                    <a href="#" class="subMenu-navigation-link">
+                        Link
+                    </a>
+                    <a href="#" class="subMenu-navigation-link">
+                        Link
+                    </a>
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle">Dropdown <i class="icon ico-caret-down text-dark"></i></button>
+                        <div class="dropdown-items">
+                            <a href="#" class="dropdown-item">
+                                Dropdown Link
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                Dropdown Link
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                Dropdown Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="subMenu-options">
+                    <a href="#" class="subMenu-option-link">
+                        Option
+                    </a>
+                    <a href="#" class="subMenu-option-link">
+                        Option
+                    </a>
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle"><i class="icon ico-user text-dark"></i> <i
+                                class="icon ico-caret-down text-dark"></i></button>
+                        <div class="dropdown-items from-right">
+                            <a href="#" class="dropdown-item">
+                                User Link
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                User Link
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item logout-item">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="burgerMenu-container">
+            <a class="burgerMenu-close" href="javascript:void(0);">
+                <i class="icon ico-times"></i>
+            </a>
+            <div class="burgerMenu-wrapper">
+                <div class="burgerMenu-navigation">
+                    <div class="burgerMenu-navigation_links">
+                        <p class="navigation-menu">Menú</p>
+                        <a class="navigation-link active" href="/">Home</a>
+                        <a class="navigation-link" href="/trending.html">Link</a>
+                        <a class="navigation-link" href="/users.html">Link</a>
+                        <a class="navigation-link" href="/videos.html">Link</a>
+                        <a href="/login.html" class="btn btn-primary large w-100">LOGIN</a>
+                        <a href="/register.html" class="btn btn-primary large w-100">SIGN UP</a>
+                    </div>
+                    <div class="burgerMenu-navigation_footer">
+                        <div class="social-media">
+                            <a href="/"><i class="icon ico-tiktok"></i></a>
+                            <a href="/"><i class="icon ico-twitter"></i></a>
+                        </div>
+                        <p>©Copyright 2023</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mobileMenu-container">
+            <div class="mobileMenu-wrapper">
+                <div class="mobileMenu-links">
+                    <a href="#" class="mobileMenu-link">
+                        <i class="icon ico-category"></i>
+                        <span>Categories</span>
+                    </a>
+                    <a href="#" class="mobileMenu-link">
+                        <i class="icon ico-link"></i>
+                        <span>Link</span>
+                    </a>
+                    <button class="mobileMenu-link" data-expand="link-search">
+                        <i class="icon ico-loupe"></i>
+                        <span>Search</span>
+                    </button>
+                    <a href="#" class="mobileMenu-link">
+                        <i class="icon ico-link"></i>
+                        <span>Link</span>
+                    </a>
+                    <button class="mobileMenu-link" data-expand="link-more">
+                        <i class="icon ico-tree-dots"></i>
+                        <span>More</span>
+                    </button>
+                </div>
+                <div class="mobileMenu-expandedLink">
+                    <div class="expandedLink-content" id="link-more">
+                        <div class="expandedLink-items">
+                            <div class="expandedLink-item">
+                                <div class="expandedLink-item-link" data-expand="subLinks-1">
+                                    <a href="#1" class="expandedLink-item-name">
+                                        <i class="icon ico-link"></i>
+                                        <span>Sub Link</span>
+                                    </a>
+                                    <div class="expandedLink-item-options">
+                                        <span class="expandedLink-item-option expand-icon"><i class="icon ico-caret-down"></i></span>
+                                    </div>
+                                </div>
+                                <div class="expandedLink-item-sublinks" id="subLinks-1">
+                                    <a class="expandedLink-item-sublink" href="#">Link</a>
+                                    <a class="expandedLink-item-sublink" href="#">Link</a>
+                                    <a class="expandedLink-item-sublink" href="#">Link</a>
+                                    <a class="expandedLink-item-sublink" href="#">Link</a>
+                                </div>
+                            </div>
+                            <div class="expandedLink-item">
+                                <div class="expandedLink-item-link">
+                                    <a href="#1" class="expandedLink-item-name">
+                                        <i class="icon ico-link"></i>
+                                        <span>Sub Link</span>
+                                    </a>
+                                    <div class="expandedLink-item-options">
+                                        <a href="#" class="expandedLink-item-option"><i class="icon ico-external-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divisor-small"></div>
+                            <div class="expandedLink-item">
+                                <div class="expandedLink-item-link">
+                                    <a href="#1" class="expandedLink-item-name">
+                                        <i class="icon ico-link"></i>
+                                        <span>Sub Link</span>
+                                    </a>
+                                    <div class="expandedLink-item-options">
+                                        <a href="#" class="expandedLink-item-option"><i class="icon ico-external-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expandedLink-content" id="link-search">
+                        <div class="input-wrapper">
+                            <div class="input-text add-padding-left">
+                                <div class="input-icon">
+                                    <div class="icon ico-loupe"></div>
+                                </div>
+                                <input type="search" name="search-mobile" id="search-mobile" placeholder="Search">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="main-container">
+
+        <section class="section-container">
+            <div class="section-wrapper pt-4">
+                <div class="form-container p-3 mw-600 bg-white">
+                    <div class="form-header">
+                        <p>Sign Up</p>
+                    </div>
+                    <div class="fast-login-container">
+                        <div class="login-with-container">
+                            <a href="#" class="login-with-item">
+                                <img src="/static/images/brands/google.svg" alt="Google" />
+                                Login with Google
+                            </a>
+                        </div>
+                    </div>
+                    <div class="alert-card info">
+                        <i class="icon ico-info-circle"></i>
+                        <p>For completing the registration and confirming your account, we give you a spin on our wheel
+                            of luck.</p>
+                    </div>
+                    <form action="" id="login-form" class="form-wrapper">
+                        <div class="input-wrapper">
+                            <label for="email">
+                                <p>Email <span class="text-danger-color">*</span></p>
+                            </label>
+                            <div class="input-text">
+                                <input type="email" name="email" id="email" placeholder="user@email.com">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="password1">
+                                <p>Create password <span class="text-danger-color">*</span></p>
+                            </label>
+                            <div class="input-text">
+                                <input type="password" name="password1" id="password1"
+                                    placeholder="****************************">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="password2">
+                                <p>Repeat password <span class="text-danger-color">*</span></p>
+                            </label>
+                            <div class="input-text">
+                                <input type="password" name="password2" id="password2"
+                                    placeholder="****************************">
+                            </div>
+                        </div>
+                        <div class="conditions-container">
+                            <div class="input-checkbox">
+                                <input type="checkbox" name="remember" id="id_remember">
+                                <label for="id_remember">Lorem ipsum dolor sit amet, consect adipiscing elit</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="contact-form-footer">
+                        <button type="submit" class="btn btn-secondary large w-100" form="login-form">Create
+                            Account</button>
+                        <p class="mt-2">Do you already have an account? <a class="text-underline" href="login.html">Login now!</a> </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-container-advanced">
+        <div class="footer-wrapper">
+
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-info-brand">
+                        <img src="/static/images/logo.svg" alt="">
+                    </div>
+                    <div class="footer-info-desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <a href="#">Magnam laboriosam</a>
+                            fuga enim impedit molestias ex?</p>
+                    </div>
+                </div>
+                <div class="footer-navigation">
+                    <div class="footer-navigation-column">
+                        <div class="footer-navigation-header">
+                            <p>Sites</p>
+                        </div>
+                        <div class="footer-navigation-links">
+                            <a href="#" class="footer-navigation-link">
+                                Link Web
+                            </a>
+                            <a href="#" class="footer-navigation-link">
+                                Link Web
+                            </a>
+                            <a href="#" class="footer-navigation-link">
+                                Link Web
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-navigation-column">
+                        <div class="footer-navigation-header">
+                            <p>Legal</p>
+                        </div>
+                        <div class="footer-navigation-links">
+                            <a href="#" class="footer-navigation-link">
+                                Terms of Service
+                            </a>
+                            <a href="#" class="footer-navigation-link">
+                                Privacy Policy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>©Copyright - All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/app.js"> </script>
+
+</body>
+
+</html>

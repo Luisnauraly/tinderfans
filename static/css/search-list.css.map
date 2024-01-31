@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,sBAAsB,CAAA;EAClB,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,GAAG,EAAE,IAAI;CAUZ;;AAbD,AAQI,sBARkB,CAQlB,wBAAwB,CAAA;EACpB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,MAAM;EACjB,GAAG,EAAE,IAAI;CACZ",
+    "sources": [
+        "../scss/pages/search-list.scss"
+    ],
+    "names": [],
+    "file": "search-list.css"
+}

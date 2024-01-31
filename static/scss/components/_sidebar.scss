@@ -1,0 +1,378 @@
+.pageSidebar-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 23.3rem;
+    min-height: calc(100vh);
+    position: relative;
+    transition: .2s;
+    background: var(--mainGradient);
+    border-right: 1px solid #11468F;
+
+    .pageSidebar-wrapper {
+        position: sticky;
+        top: 0rem;
+        padding: 2rem 2rem 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        // max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+        @include scrollStyleY(var(--complementaryColor), 1);
+    }
+
+    .pageSidebar-toggler {
+        position: absolute;
+        background-color: var(--complementaryColor);
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: var(--circleRadius);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        left: calc(100% + 1rem);
+
+        .icon {
+            color: var(--whiteColor);
+            transition: .3s;
+            font-size: 2.4rem;
+            pointer-events: none;
+        }
+    }
+
+    .pageSidebar-section {
+        gap: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pageSidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            .icon {
+                background-color: var(--complementaryColor);
+                padding: .5rem;
+                height: 2.4rem;
+                width: 2.4rem;
+                border-radius: var(--smallRadius);
+                color: var(--whiteColor);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-family: var(--titleFont);
+                line-height: 1.5;
+            }
+        }
+
+        .header-cta {
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: var(--circleRadius);
+            background-color: var(--primaryColor1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                color: var(--whiteColor);
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .pageSidebar-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .tag-btn{
+            font-size: 1.4rem;
+        }
+    }
+
+    .more-btn-link {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--medRadius);
+        color: var(--whiteColor);
+        min-height: 4rem;
+        text-align: center;
+        background-color: var(--primaryColor1);
+
+    }
+
+    &.visible {
+        transform: translateX(0%);
+
+        .pageSidebar-toggler {
+            .icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    @include screen(tablet) {
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        top: 0px;
+        transform: translateX(-100%);
+        z-index: 998;
+        padding-top: 7rem !important;
+        padding-bottom: 7.5rem !important;
+
+        .pageSidebar-wrapper {
+            position: relative;
+            max-height: calc(100vh - 12rem);
+            top: 0px;
+            overflow-y: auto;
+        }
+
+        .pageSidebar-toggler {
+            display: flex;
+        }
+    }
+}
+
+.sidebarProfiles-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sidebarProfile-card {
+    border-radius: var(--smallRadius);
+    overflow: hidden;
+
+    &:hover {
+        .sidebarProfile-image {
+            img {
+                transform: scale(1.1);
+                opacity: .7;
+            }
+        }
+    }
+
+    .sidebarProfile-image {
+        img {
+            transition: .2s;
+        }
+    }
+}
+
+.sidebarCountries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aside-topList{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .topList-item{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .topList-image{
+            min-width: 3.2rem;
+            height: 3.2rem;
+            background-color: var(--secondaryColor);
+            border-radius: var(--smallRadius);
+            padding: .5rem;
+            
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: var(--smallRadius);
+            }
+        }
+    }
+}
+
+.aside-musicList{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    .musicList-item{
+        display: flex;
+        gap: 1rem;
+        .music-image{
+            min-width: 5.6rem;
+            height: 5.6rem;
+            border-radius: var(--smallRadius);
+            display: flex;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .music-info{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        .music-info-title{
+            @include lineClamp(1);
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-bottom: .3rem;
+        }
+        .music-info-artist{
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        .music-info-videos{
+            font-size: 1rem;
+            line-height: 1;
+        }
+    }
+}
+
+.sidebarCountry {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0rem .5rem;
+    transition: .2s;
+
+    img {}
+
+    p {
+        font-family: var(--titleFont);
+        font-weight: 800;
+        color: var(--darkColor1);
+    }
+
+    &:hover {
+        gap: 1.5rem;
+    }
+}
+
+.sidebarTrials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebarTrial-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .sidebarTrial-image {
+        border-radius: var(--smallRadius);
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            transition: .2s;
+        }
+    }
+
+    .sidebarTrial-name {
+        font-weight: 800;
+        font-family: var(--titleFont);
+        transition: .2s;
+    }
+
+    &:hover {
+        .sidebarTrial-image {
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        .sidebarTrial-name {
+            color: var(--complementaryColor);
+        }
+    }
+}
+
+// Cuentas Recomendadas
+.recommended-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.recommended-link {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .recommended-link_image {
+        img {
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: var(--pillRadius);
+            object-fit: cover;
+        }
+    }
+
+    .recommended-link_username {
+        flex: 1;
+        color: var(--whiteColor);
+        font-weight: 600;
+    }
+}
+
+// Categorias mas buscadas
+.asideCategories-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .category-link {
+        height: 3.2rem;
+        padding: .6rem 1rem;
+        display: flex;
+        align-items: center;
+        background: #11468F;
+        border-radius: var(--medRadius);
+        font-weight: 600;
+        color: var(--whiteColor);
+    }
+}
+
+.asideTrends-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .trend-link {
+        height: 3.2rem;
+        padding: .6rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        background: #11468F;
+        border-radius: var(--medRadius);
+        font-weight: 600;
+        color: var(--whiteColor);
+    }
+}

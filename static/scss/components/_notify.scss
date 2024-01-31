@@ -1,0 +1,290 @@
+.notify-container {
+  position: fixed;
+  top: -1rem;
+  right: -1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2rem;
+  max-height: calc(100vh - 12rem);
+  overflow: hidden;
+  padding: 10rem 3rem;
+  pointer-events: none;
+  z-index: 999;
+
+  // Variables para el content de los iconos
+  --successIcon: "\e972";
+  --alertIcon: "\e94c";
+  --errorIcon: "\e9fb";
+  --infoIcon: "\e9b0";
+}
+
+.notify-wrapper {
+  display: flex;
+  padding: 1rem 5rem;
+  position: relative;
+  background-color: var(--whiteColor);
+  box-shadow: var(--largeBoxShadow);
+  border-radius: var(--largeRadius);
+  width: 100%;
+  max-width: 40rem;
+  transition: 0.2s;
+  pointer-events: all;
+
+  .notify-icon {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: .5rem;
+    top: .5rem;
+    border-radius: var(--medRadius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: "";
+      font-family: "racoon-icons";
+      width: 2.8rem;
+      height: 2.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--whiteColor);
+      font-weight: bold;
+    }
+  }
+
+  .notify-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 4rem;
+    gap: 1px;
+
+    .notify-body_title {
+      font-weight: bold;
+      font-family: var(--titleFont);
+      color: var(--darkColor);
+      font-size: 1.6rem;
+      line-height: 28px;
+    }
+
+    .notify-body_text {
+      color: var(--darkColor3);
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  .notify-close {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    border-radius: var(--medRadius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+
+    &::before {
+      content: "\e9fa";
+      font-family: "racoon-icons";
+      color: var(--darkColor3);
+    }
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  &.success {
+    box-shadow: 0px 0px 0px 1px rgba(23, 185, 107, 0.4);
+
+    .notify-icon {
+      &::before {
+        content: var(--successIcon);
+        color: var(--successColor);
+      }
+    }
+
+    .notify-body {
+      .notify-body_title {
+        color: #137646;
+      }
+    }
+  }
+
+  &.alert {
+    box-shadow: 0px 0px 0px 1px rgba(250, 186, 64, 0.4);
+
+    .notify-icon {
+      &::before {
+        content: var(--alertIcon);
+        color: var(--warningColor);
+      }
+    }
+
+    .notify-body {
+      .notify-body_title {
+        color: #e99b05;
+      }
+    }
+  }
+
+  &.error {
+    box-shadow: 0px 0px 0px 1px rgba(232, 54, 88, 0.4);
+
+    .notify-icon {
+      &::before {
+        content: var(--errorIcon);
+        color: var(--dangerColor);
+      }
+    }
+
+    .notify-body {
+      .notify-body_title {
+        color: #e83658;
+      }
+    }
+  }
+
+  &.info {
+    box-shadow: 0px 0px 0px 1px rgba(22, 86, 174, 0.4);
+
+    .notify-icon {
+      &::before {
+        content: var(--infoIcon);
+        color: var(--infoColor);
+      }
+    }
+
+    .notify-body {
+      .notify-body_title {
+        color: #1f4272;
+      }
+    }
+  }
+
+  &.hide {
+    transform: translateX(calc(100% + 2rem));
+  }
+}
+
+.temporalNotify-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  max-height: calc(50vh);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 995;
+
+  @include screen(mobile) {
+    bottom: 8rem;
+  }
+
+  .temporalNotify-wrapper {
+    min-width: 10rem;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--medRadius);
+    transition: 0.2s;
+
+    .notify-text {
+      font-weight: 600;
+    }
+
+    &.success {
+      background-color: #e7fff3;
+
+      .notify-text {
+        color: var(--successColor);
+      }
+    }
+
+    &.alert {
+      background-color: #fff4e9;
+
+      .notify-text {
+        color: var(--warningColor);
+      }
+    }
+
+    &.error {
+      background-color: #ffe5ea;
+
+      .notify-text {
+        color: var(--dangerColor);
+      }
+    }
+
+    &.info {
+      background-color: #e9f2ff;
+
+      .notify-text {
+        color: var(--darkColor);
+      }
+    }
+
+    &.hide {
+      transform: translateX(calc(100%));
+    }
+  }
+}
+
+.createNotify-wrapper {
+  min-height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+
+  .createNotify-normal,
+  .createNotify-small {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      text-align: center;
+      font-size: 2.4rem;
+    }
+  }
+
+  .createNotify-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 1rem;
+
+    button {
+      padding: 1rem;
+      font-weight: bold;
+    }
+
+    .successBtn {
+      color: var(--succesColor);
+    }
+
+    .alertBtn {
+      color: var(--warningColor);
+    }
+
+    .errorBtn {
+      color: var(--dangerColor);
+    }
+
+    .infoBtn {
+      color: var(--infoColor);
+    }
+  }
+}

@@ -1,0 +1,84 @@
+html {
+    --primaryColor: #F55951;
+    --primaryColorText: var(--whiteColor);
+    --secondaryColor: #361D32;
+    --secondaryColorText: var(--whiteColor);
+    
+    --bodyColor: var(--darkColor1);
+    --textColor: var(--darkColor);
+  
+    --infoColor: rgb(153, 213, 255);
+    --successColor: rgb(40, 175, 96);
+    --warningColor: rgb(255, 187, 51);
+    --dangerColor: rgb(237, 49, 49); 
+    --lightColor: rgb(229, 244, 255);
+  
+    --darkColor: #000000;
+    --darkColor1: #151515;
+    --darkColor2: #333333;
+    --darkColor3: #454545;
+    --darkColor4: #666666;
+    --darkAlphaColor01: rgba(0, 0, 0, 0.01);
+    --darkAlphaColor05: rgba(0, 0, 0, 0.05);
+    --darkAlphaColor10: rgba(0, 0, 0, 0.1);
+    --darkAlphaColor15: rgba(0, 0, 0, 0.15);
+    --darkAlphaColor25: rgba(0, 0, 0, 0.25);
+    --darkAlphaColor50: rgba(0, 0, 0, 0.5);
+    --darkAlphaColor75: rgba(0, 0, 0, 0.75);
+    --darkAlphaColor95: rgba(0, 0, 0, 0.95);
+    --darkAlphaColor99: rgba(0, 0, 0, 0.99);
+  
+    --greyColor1: #888888;
+    --greyColor2: #aeaeae;
+    --greyColor3: #dbdbdb;
+    --greyColor4: #f9f9f9;
+  
+    --whiteColor: #ffffff;
+    --whiteAlphaColor01: rgba(255, 255, 255, 0.01);
+    --whiteAlphaColor05: rgba(255, 255, 255, 0.05);
+    --whiteAlphaColor10: rgba(255, 255, 255, 0.1);
+    --whiteAlphaColor25: rgba(255, 255, 255, 0.25);
+    --whiteAlphaColor50: rgba(255, 255, 255, 0.5);
+    --whiteAlphaColor75: rgba(255, 255, 255, 0.75);
+    --whiteAlphaColor95: rgba(255, 255, 255, 0.95);
+  
+    // ---- Border radius ----
+    --smallRadius: 5px;
+    --medRadius: 10px;
+    --largeRadius: 20px;
+    --largeExtraRadius: 40px;
+    --pillRadius: 100px;
+    --circleRadius: 50%;
+  
+    // ---- Font Family ----
+    --fontSizeBase: 16px;
+    --titleFont: "Inter", sans-serif;
+    --bodyFont: "Montserrat", sans-serif;
+  
+    // ---- Box shadow ----
+    --smallBoxShadow: 0px 5px 10px var(--darkAlphaColor15);
+    --medBoxShadow: 0px 5px 30px var(--darkAlphaColor15);
+    --bigBoxShadow: 0px 20px 30px var(--darkAlphaColor15);
+  
+    --header-height: 7rem;
+    --footer-height: 25rem;
+    --page-max-width: 1366px;
+    --sidebar-max-width: 25rem;
+    --section-padding-x: 10rem;
+  
+    @include screen(tablet) {
+      --section-padding-x: 5rem;
+    }
+  
+    @include screen(mobile) {
+      --section-padding-x: 2rem;
+    }
+  
+    @include screen(custom, max, 330) {
+
+    }
+}
+
+@mixin bgAlphaColor($color, $opacity) {
+	background: rgba($color, $opacity);
+}

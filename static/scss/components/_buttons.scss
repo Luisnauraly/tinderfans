@@ -1,0 +1,196 @@
+// -------------------------
+//          Button
+// -------------------------
+.btn {
+  align-items: center;
+  border: 0;
+  border-radius: 0.5rem;
+  display: flex;
+  font-family: var(--titleFont);
+  font-size: 1.4rem;
+  font-weight: 600;
+  justify-content: center;
+  outline: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  transition-property: background-color, filter, box-shadow, color;
+  transition-timing-function: ease-in-out;
+  white-space: nowrap;
+  width: fit-content;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  
+
+  &.upper {
+    text-transform: uppercase;
+  }
+
+  &.large {
+    font-size: 16px;
+    padding: 15px 40px;
+    line-height: 1;
+
+    @include screen(m-mobile) {
+      padding: 1rem 2rem;
+    }
+  }
+
+  &.medium {
+    padding: 10px 30px;
+    height: 4rem;
+    line-height: 1;
+  }
+
+  &.small {
+    padding: 5px 20px;
+    line-height: 1;
+  }
+
+  &.disable {
+    border-color: var(--greyColor4);
+    background-color: var(--greyColor4);
+    color: var(--greyColor1);
+    cursor: not-allowed;
+
+    &:hover {
+      border-color: var(--greyColor4);
+      background-color: var(--greyColor4);
+      color: var(--greyColor1);
+      cursor: not-allowed;
+    }
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    box-shadow: var(--smallBoxShadow);
+    filter: brightness(1.15);
+  }
+
+  
+}
+
+.btn-outline {
+  background-color: var(--whiteColor);
+  border: 1px solid black;
+  color: var(--textColor);
+  transition: .2s;
+
+  &:hover {
+
+  }
+}
+
+.btn-primary {
+  background-color: var(--primaryColor);
+  color: var(--primaryColorText);
+  border: 1px solid transparent;
+
+  &.outline {
+    background-color: transparent;
+    border-color: var(--primaryColor);
+    color: var(--primaryColor);
+  }
+
+  &:hover {
+
+  }
+}
+
+
+.btn-secondary {
+  background-color: var(--secondaryColor);
+  color: var(--secondaryColorText) !important;
+  border: 1px solid transparent;
+
+  &.outline {
+    background-color: transparent;
+    border-color: var(--secondaryColor);
+    color: var(--secondaryColor);
+  }
+}
+
+.btn-complementary {
+  background-color: var(--complementaryColor);
+  color: var(--complementaryColorText);
+  border: 1px solid transparent;
+
+  &.outline {
+    background-color: transparent;
+    border-color: var(--complementaryColor);
+    color: var(--complementaryColor);
+  }
+
+  &:hover {
+    
+  }
+}
+
+// contenedor de botones
+.btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+
+  @include screen(m-mobile) {
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+.btn-info {
+  background-color: var(--infoColor);
+  color: var(--darkColor);
+}
+
+.btn-success {
+  background-color: var(--successColor);
+  color: var(--whiteColor) !important;
+}
+
+.btn-warning,
+.btn-alert {
+  background-color: var(--warningColor);
+  color: var(--whiteColor);
+}
+
+.btn-danger,
+.btn-error {
+  background-color: var(--dangerColor);
+  color: var(--whiteColor) !important;
+}
+
+.btn-light {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+}
+
+.btn-dark {
+  background-color: var(--darkColor);
+  color: var(--whiteColor);
+}
+
+.btn-white {
+  background-color: var(--whiteColor);
+  color: var(--darkColor);
+  border: 1px solid transparent;
+
+  &.outline {
+    background-color: transparent;
+    border-color: var(--whiteColor);
+    color: var(--whiteColor);
+  }
+}

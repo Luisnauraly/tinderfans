@@ -1,0 +1,114 @@
+// ---- Breakpoints ----
+$breakpoint-xsmall: 375px;
+$breakpoint-msmall: 576px;
+$breakpoint-small: 768px;
+$breakpoint-xmed: 992px;
+$breakpoint-med: 1200px;
+
+@mixin screen($size, $type: max, $pixels: $breakpoint-small) {
+  @if $size=="x-mobile" {
+    @media screen and ($type + -width: $breakpoint-xsmall) {
+      @content;
+    }
+  }
+
+  @else if $size=="m-mobile" {
+    @media screen and ($type + -width: $breakpoint-msmall) {
+      @content;
+    }
+  }
+
+  @else if $size=="mobile" {
+    @media screen and ($type + -width: $breakpoint-small) {
+      @content;
+    }
+  }
+
+  @else if $size=="tablet" {
+    @media screen and ($type + -width: $breakpoint-xmed) {
+      @content;
+    }
+  }
+
+  @else if $size=="med-desktop" {
+    @media screen and ($type + -width: $breakpoint-med) {
+      @content;
+    }
+  }
+
+  @else if $size=="large-desktop" {
+    @media screen and (min + -width: $breakpoint-med) {
+      @content;
+    }
+  }
+
+  @else if $size=="custom" {
+    @media screen and ($type + -width: $pixels + px) {
+      @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}
+
+// Line-clamp
+@mixin lineClamp($number) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+  overflow: hidden;
+}
+
+@mixin scrollStyleY($color, $size: 5) {
+
+  &::-webkit-scrollbar {
+    width: $size + px;
+    height: $size + px;
+    -webkit-appearance: none;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: var(--darkAlphaColor05);
+    border-radius: 50px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: $color;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    // background: rgba($color, .5);
+  }
+}
+
+@mixin scrollStyleX($color, $size: 7.5) {
+  padding-bottom: 1rem;
+
+  &::-webkit-scrollbar {
+    height: $size + px;
+    -webkit-appearance: none;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: var(--darkAlphaColor05);
+    border-radius: 50px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: $color;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    // background: rgba($color, .5);
+  }
+}
