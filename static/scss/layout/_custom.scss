@@ -14,6 +14,9 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     .sliderModel-left-buttons {
         position: absolute;
         top: 2rem;
@@ -27,6 +30,47 @@
             i {
                 // Styles for the arrow-left-thin icon
             }
+        }
+    }
+
+    &.like{
+        &::before{
+            content: 'YES!!';
+            position: absolute;
+            top: 2rem;
+            right: -30%;
+            margin: auto;
+            background-color: #f55951da;
+            backdrop-filter: blur(5px);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 6rem;
+            height: 10rem;
+            width: 100%;
+            transform: rotate(45deg);
+            color: var(--whiteColor);
+        }
+    }
+    &.dislike{
+        &::before{
+            content: 'Nop!!';
+            position: absolute;
+            top: 2rem;
+            right: -30%;
+            margin: auto;
+            background-color: #f55951da;
+            backdrop-filter: blur(5px);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 6rem;
+            height: 10rem;
+            width: 100%;
+            transform: rotate(45deg);
+            color: var(--whiteColor);
         }
     }
 }
@@ -60,7 +104,7 @@
 
     .sliderModel-content {
         position: absolute;
-        bottom: 0;
+        bottom: 10rem;
         left: 0;
         right: 0;
         padding: 2rem;
@@ -85,45 +129,71 @@
                 font-weight: 500;
             }
         }
-
-        .model-options {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            button.model-option {
-                width: 5rem;
-                height: 5rem;
-                border-radius: var(--pillRadius);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                i {
-                    font-size: 2.4rem;
-                }
-                &.pass {
-                    background-color: #1B263B;
-                    i {
-                        // Styles for the times icon
-                    }
-                }
-
-                &.of {
-                    background-color: #00AFF0;
-                    img {
-                        // Styles for the OnlyFans brand image
-                    }
-                }
-
-                &.like {
-                    background-color: #F20089;
-                    // box-shadow: 0 0 0 3px hsla(326, 100%, 47%, 0.697), 0 0 0 5px hsla(326, 100%, 47%, 0.409);
-                    // transition: box-shadow 0.3s ease;
-                    i {
-                        // Styles for the heart-fill icon
-                    }
-                }
+    }
+    
+}
+.model-options {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    .model-options-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 2rem;
+    }
+    .model-option {
+        width: 5rem;
+        max-width: 5rem !important;
+        height: 5rem;
+        border-radius: var(--pillRadius);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 0rem;
+        i {
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+        &.pass {
+            background-color: #1B263B;
+            i {
+                // Styles for the times icon
             }
         }
+
+        &.of {
+            background-color: #00AFF0;
+            img {
+                // Styles for the OnlyFans brand image
+            }
+        }
+
+        &.like {
+            background-color: #F20089;
+            // box-shadow: 0 0 0 3px hsla(326, 100%, 47%, 0.697), 0 0 0 5px hsla(326, 100%, 47%, 0.409);
+            // transition: box-shadow 0.3s ease;
+            i {
+                // Styles for the heart-fill icon
+            }
+        }
+    }
+}
+.mySwiper{
+    width: 100%;
+    height: 100%;
+
+    .swiper-wrapper{
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide{
+        // overflow: hidden;
     }
 }

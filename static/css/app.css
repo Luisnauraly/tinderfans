@@ -9361,6 +9361,9 @@ a i {
   width: 100%;
   height: 100%;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .sliderModel-cards .sliderModel-left-buttons {
   position: absolute;
@@ -9374,6 +9377,45 @@ a i {
   border-radius: var(--pillRadius);
   background-color: #1B263B;
 }
+.sliderModel-cards.like::before {
+  content: "YES!!";
+  position: absolute;
+  top: 2rem;
+  right: -30%;
+  margin: auto;
+  background-color: rgba(245, 89, 81, 0.8549019608);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  height: 10rem;
+  width: 100%;
+  transform: rotate(45deg);
+  color: var(--whiteColor);
+}
+.sliderModel-cards.dislike::before {
+  content: "Nop!!";
+  position: absolute;
+  top: 2rem;
+  right: -30%;
+  margin: auto;
+  background-color: rgba(245, 89, 81, 0.8549019608);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  height: 10rem;
+  width: 100%;
+  transform: rotate(45deg);
+  color: var(--whiteColor);
+}
+
 .sliderModel-card {
   position: relative;
   background-color: var(--secondaryColor);
@@ -9404,7 +9446,7 @@ a i {
 }
 .sliderModel-card .sliderModel-content {
   position: absolute;
-  bottom: 0;
+  bottom: 10rem;
   left: 0;
   right: 0;
   padding: 2rem;
@@ -9429,29 +9471,52 @@ a i {
   color: var(--whiteColor);
   font-weight: 500;
 }
-.sliderModel-card .sliderModel-content .model-options {
+
+.model-options {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+}
+.model-options .model-options-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 2rem;
 }
-.sliderModel-card .sliderModel-content .model-options button.model-option {
+.model-options .model-option {
   width: 5rem;
+  max-width: 5rem !important;
   height: 5rem;
   border-radius: var(--pillRadius);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding: 0rem;
 }
-.sliderModel-card .sliderModel-content .model-options button.model-option i {
+.model-options .model-option i {
   font-size: 2.4rem;
+  line-height: 1;
 }
-.sliderModel-card .sliderModel-content .model-options button.model-option.pass {
+.model-options .model-option.pass {
   background-color: #1B263B;
 }
-.sliderModel-card .sliderModel-content .model-options button.model-option.of {
+.model-options .model-option.of {
   background-color: #00AFF0;
 }
-.sliderModel-card .sliderModel-content .model-options button.model-option.like {
+.model-options .model-option.like {
   background-color: #F20089;
+}
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+.mySwiper .swiper-wrapper {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=app.css.map */
