@@ -33,23 +33,51 @@
         }
     }
 
+    .dotlottie-player{
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translateX(50%) translateY(-50%);
+        margin: auto;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 6rem;
+        height: 20rem;
+        width: 100%;
+        color: var(--whiteColor);
+
+        p{
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translateX(50%) translateY(-70%);
+            font-size: 3rem;
+            color: var(--whiteColor);
+            font-weight: bold;
+        }
+    }
+    
     &.like{
         &::before{
-            content: 'YES!!';
+            content: 'Like';
             position: absolute;
-            top: 2rem;
-            right: -30%;
+            top: 50%;
+            right: 50%;
+            transform: translateX(50%) translateY(-50%);
             margin: auto;
-            background-color: #f55951da;
+            // background-color: #f55951da;
+            background-color: var(--darkAlphaColor25);
             backdrop-filter: blur(5px);
-            z-index: 2;
+            z-index: 4;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 6rem;
             height: 10rem;
             width: 100%;
-            transform: rotate(45deg);
             color: var(--whiteColor);
         }
     }

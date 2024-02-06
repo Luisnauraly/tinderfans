@@ -29,6 +29,10 @@
                 
 
                 <div class="sliderModel-cards">
+                    <!-- <div class="dotlottie-player">
+                        <dotlottie-player  src="https://lottie.host/c3ac359a-c973-4a9b-83a2-9f98abafd52f/ZuqSPY88UP.json" background="transparent" speed="4" style="width: 400px; height: 400px;" autoplay></dotlottie-player>
+                        <p>Like</p>
+                    </div> -->
                     <div class="sliderModel-left-buttons">
                         <button class="sliderModel-back">
                             <i class="icon ico-arrow-left-bold"></i>
@@ -36,10 +40,10 @@
                     </div>
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                          <div class="swiper-slide">
+                          <div class="swiper-slide" data-url="https://resonant-mochi-855a76.netlify.app#1">
                             <div class="sliderModel-card">
                                 <div class="sliderModel-picture">
-                                    <img src="/static/images/model.png" alt="Imagen del producto"/>
+                                    <img src="/static/images/models/model.png" alt="Imagen del producto"/>
                                 </div>
                                 <div class="sliderModel-content">
                                     <div class="model-info">
@@ -50,10 +54,10 @@
                                 </div>
                             </div>
                           </div>
-                          <div class="swiper-slide">
+                          <div class="swiper-slide" data-url="https://resonant-mochi-855a76.netlify.app#2">
                             <div class="sliderModel-card">
                                 <div class="sliderModel-picture">
-                                    <img src="/static/images/model.png" alt="Imagen del producto"/>
+                                    <img src="/static/images/models/model-1.png" alt="Imagen del producto"/>
                                 </div>
                                 <div class="sliderModel-content">
                                     <div class="model-info">
@@ -64,10 +68,10 @@
                                 </div>
                             </div>
                           </div>
-                          <div class="swiper-slide">
+                          <div class="swiper-slide" data-url="https://resonant-mochi-855a76.netlify.app#3">
                             <div class="sliderModel-card">
                                 <div class="sliderModel-picture">
-                                    <img src="/static/images/model.png" alt="Imagen del producto"/>
+                                    <img src="/static/images/models/model-2.png" alt="Imagen del producto"/>
                                 </div>
                                 <div class="sliderModel-content">
                                     <div class="model-info">
@@ -78,10 +82,10 @@
                                 </div>
                             </div>
                           </div>
-                          <div class="swiper-slide">
+                          <div class="swiper-slide" data-url="https://resonant-mochi-855a76.netlify.app#4">
                             <div class="sliderModel-card">
                                 <div class="sliderModel-picture">
-                                    <img src="/static/images/model.png" alt="Imagen del producto"/>
+                                    <img src="/static/images/models/model-3.png" alt="Imagen del producto"/>
                                 </div>
                                 <div class="sliderModel-content">
                                     <div class="model-info">
@@ -92,10 +96,10 @@
                                 </div>
                             </div>
                           </div>
-                          <div class="swiper-slide">
+                          <div class="swiper-slide" data-url="https://resonant-mochi-855a76.netlify.app#5">
                             <div class="sliderModel-card">
                                 <div class="sliderModel-picture">
-                                    <img src="/static/images/model.png" alt="Imagen del producto"/>
+                                    <img src="/static/images/models/model-2.png" alt="Imagen del producto"/>
                                 </div>
                                 <div class="sliderModel-content">
                                     <div class="model-info">
@@ -130,46 +134,82 @@
 
             </div>
         </div>
+        
 
     </main>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
-        let containerCards = document.querySelector('.sliderModel-cards');
+    <script>
+        let swiper = new Swiper(".mySwiper", {
+            effect: "fade",
+            spaceBetween: 30,
+            grabCursor: false,
+            navigation: {
+                nextEl: ".model-option.like",
+            },
+        });
+
+
+        // Puedes acceder al elemento DOM del botón de siguiente así
+        var nextButton = swiper.nextEl;
+        console.log(nextButton)
+        
         let controlModel = document.querySelectorAll('.model-option');
 
-            for (const btn of controlModel) {
-                btn.addEventListener('click', (e) => {
-                let target = e.target;
-                if (target.classList.contains('like')) {
-                    console.log('Like')
-                    containerCards.classList.add('like');
-                    setTimeout(() => {
-                        containerCards.classList.remove('like');
-                    }, 300);
+        function updatedOfLink() {
+            let slideActive = document.querySelector('.swiper-slide-active');
+            let slideURL = slideActive.dataset.url;
+            let ofLink = document.querySelector('.model-option.of');
+            ofLink.setAttribute('href',  `${slideURL}`);
+        }
+        updatedOfLink();
+        
+
+        for (const btn of controlModel) {
+            btn.addEventListener('click', (e) => {
+            let target = e.target;
+            let containerCards = document.querySelector('.sliderModel-cards');
+            
+            updatedOfLink();
+
+            if (target.classList.contains('pass')) {
+                document.querySelector('.model-option.like').click();
+                // containerCards.classList.add('dislike');
+                let dotlottieElement = document.querySelector('.dotlottie-player');
+                if (dotlottieElement) {
+                    dotlottieElement.remove();
                 }
-                if (target.classList.contains('pass')) {
-                    console.log('Dislike')
-                    containerCards.classList.add('dislike');
-                    setTimeout(() => {
-                        containerCards.classList.remove('dislike');
-                    }, 300);
-                }
-            });
+                setTimeout(() => {
+                    // containerCards.classList.remove('dislike');
+                }, 200);
+            }
+
+            if (target.classList.contains('like')) {
+                let likeAnimation = `
+                    <div class="dotlottie-player">
+                        <dotlottie-player  src="https://lottie.host/c3ac359a-c973-4a9b-83a2-9f98abafd52f/ZuqSPY88UP.json" background="transparent" speed="4" style="width: 400px; height: 400px;" autoplay></dotlottie-player>
+                        <p>Like</p>
+                    </div>`
+                ;
+                containerCards.insertAdjacentHTML('beforeend', likeAnimation);
+                
+                setTimeout(() => {
+                    let dotlottieElement = document.querySelector('.dotlottie-player');
+                    if (dotlottieElement) {
+                        dotlottieElement.remove();
+                    }
+                }, 200);
+            }
+            
+        });
 
         }
         
-        var swiper = new Swiper(".mySwiper", {
-            effect: "cards",
-            grabCursor: true,
-            navigation: {
-                nextEl: ".model-option.like",
-                // prevEl: ".model-option.pass",
-            },
-        });
+        
     </script>
 
     <script src="/static/js/app.js"> </script>
